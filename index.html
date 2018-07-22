@@ -5,15 +5,14 @@ pagination:
 ---
 {% for post in paginator.posts %}
   <div class="card mb-3 shadow-sm" style="margin-top: 4rem">
-    <a href="#">
-      <div class="card-image" style="background-image: url('https://source.unsplash.com/random')"></div>
+    <a href="{{site.baseurl}}{{post.url}}">
+      <div class="card-image" style="background-image: url('{{ post.photo_url }}')"></div>
     </a>
     <div class="card-body">
-      <h5 class="card-title font-weight-bold"><a href="#">{{ post.title }}</a></h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
-        bit longer.</p>
+      <h5 class="card-title font-weight-bold"><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h5>
+      <p class="card-text">{{ post.content | strip_html | truncatewords: 30 }}<a href="{{site.baseurl}}{{post.url}}" class="read-more"> Read more</a></p>
       <p class="card-text">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">{{ post.date | date: "%d/%m/%Y" }}</small>
       </p>
     </div>
   </div>
