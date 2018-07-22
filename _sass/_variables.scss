@@ -1,10 +1,6 @@
-$custom-font-size: 20px;
-
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:       $font-family-monospace;
-
-$font-size-base: 3rem !default; // Assumes the browser default, typically `16px`
-
-@import "../node_modules/bootstrap/scss/variables";
+$font-family-sans-serif: 'Open Sans',
+sans-serif;
+$link-color: $dark-blue;
+$link-hover-color: $glacier-blue;
+$link-hover-decoration: none;
+@import "../node_modules/bootstrap/scss/bootstrap";

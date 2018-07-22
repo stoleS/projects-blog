@@ -1,11 +1,6 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="{{'/assets/main.css' | prepend: site.baseurl}}">
-    </head>
-    <body>
-	{{content}}
-	<script src="{{'/node_modules/jquery/dist/jquery.min.js' | prepend: site.baseurl}}"></script>
-	<script src="{{'/node_modules/popper.js/dist/umd/popper.min.js' | prepend: site.baseurl}}"></script>
-	<script src="{{'/node_modules/bootstrap/dist/js/bootstrap.min.js' | prepend: site.baseurl}}"></script>
-    </body>
-</html>
+{% include head.html %}
+<div class="wrapper">
+    {% include header.html %}
+    {{ content }}
+</div>
+{% include footer.html %}

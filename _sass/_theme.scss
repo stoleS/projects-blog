@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+// THEME COLORS
+$dark-blue: #25283D; // yankees blue
+$glacier-blue: #1995AD; // glacier blue
+$light-blue: #98DFEA; // non-photo blue
+$beige: #EFD9CE; // almond
+/* PAGE WRAPPER */
+
+.wrapper {
+  max-width: 48rem;
+  margin: 4rem auto 4rem auto;
+}
+
+/* PAGE WRAPPER END */
+
+/* LOGO TEXT STYLE */
+
+.title {
+  transition: color 0.2s ease-in-out;
+  color: $dark-blue;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: $glacier-blue;
+}
+
+/* LOGO TEXT STYLE END */
+
+/* CARD STYLES */
+
+.card {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-image {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  .card-image {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+}
+
+/* CARD STYLES END */
+
+/* NAV RESPONSIVE STYLES */
+
+@media (max-width: 48rem) {
+  .title,
+  .items {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+/* NAV RESPONSIVE STYLES END*/
+
+.card-image {
+  min-height: 350px;
+  background-position: center;
+  background-size: cover;
+}
+
+/* LINK HOVER EFFECT */
+
+nav a {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+}
+
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+.line-up a::before,
+.line-up a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #566473;
+  content: '';
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  transform: scale(0.85);
+}
+
+.line-up a::after {
+  opacity: 0;
+  -webkit-transition: top 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: top 0.3s, opacity 0.3s, -moz-transform 0.3s;
+  transition: top 0.3s, opacity 0.3s, transform 0.3s, background 0.3s ease-in-out;
+}
+
+.line-up a::before {
+  transition: transform 0.3s, background 0.3s ease-in-out;
+}
+
+.line-up a:hover::before,
+.line-up a:hover::after,
+.line-up a:focus::before,
+.line-up a:focus::after {
+  background: $glacier-blue;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+.line-up a:hover::after,
+.line-up a:focus::after {
+  top: 0%;
+  opacity: 1;
+}
+
+/* LINK HOVER EFFECT END*/
+
+/* PAGINATION STYLES */
+
+.pager {
+  margin-top: 3rem;
+}
+
+.next,
+.previous {}
+
+.btn-next,
+.btn-previous {
+  background-color: white;
+}
+
+.btn-next:hover,
+.btn-previous:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* PAGINATION STYLES END*/
