@@ -21,13 +21,13 @@ pagination:
 {% if paginator.total_pages > 1 %}
   <ul class="pager pagination">
       {% if paginator.previous_page %}
-      <li class="page-item previous float-left font-weight-bold">
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-previous shadow-sm font-weight-bold p-3">&larr; newer posts</a>
+      <li class="page-item float-left font-weight-bold">
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-previous shadow-sm font-weight-bold p-3">&laquo; newer posts</a>
       </li>
       {% endif %}
       {% if paginator.next_page %}
-      <li class="page-item next float-right ml-auto">
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-next shadow-sm font-weight-bold p-3">older posts &rarr;</a>
+      <li class="page-item float-right ml-auto">
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-next shadow-sm font-weight-bold p-3">older posts &raquo;</a>
       </li>
       {% endif %}
   </ul>

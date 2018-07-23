@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,800");
 // THEME COLORS
-$dark-blue: #25283D; // yankees blue
-$glacier-blue: #1995AD; // glacier blue
-$light-blue: #98DFEA; // non-photo blue
-$beige: #EFD9CE; // almond
+$dark-blue: #25283d; // yankees blue
+$glacier-blue: #1995ad; // glacier blue
+$light-blue: #98dfea; // non-photo blue
+$beige: #efd9ce; // almond
 /* PAGE WRAPPER */
 
 .wrapper {
   max-width: 48rem;
-  margin: 4rem auto 4rem auto;
+  margin: 4rem auto 3rem auto;
 }
 
 /* PAGE WRAPPER END */
@@ -36,8 +36,8 @@ $beige: #EFD9CE; // almond
 .card-image {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .card:hover {
@@ -91,7 +91,7 @@ a {
   width: 100%;
   height: 4px;
   background: #566473;
-  content: '';
+  content: "";
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
@@ -135,9 +135,6 @@ a {
   margin-top: 3rem;
 }
 
-.next,
-.previous {}
-
 .btn-next,
 .btn-previous {
   background-color: white;
@@ -166,6 +163,41 @@ a {
 
 .post-wrapper {
   margin-top: 4rem;
+  p {
+    font-size: 1.2rem;
+    text-align: justify;
+  }
 }
 
 /* POST PAGE STYLES END */
+
+/* FOOTER STYLES */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: $dark-blue;
+  padding: 3rem 0;
+}
+
+.footer .container {}
+
+.footer a {
+  color: $glacier-blue;
+}
+
+.footer a:hover {
+  color: $light-blue;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+/* FOOTER STYLES END*/
