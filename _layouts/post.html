@@ -1,18 +1,17 @@
----
-layout: default
+--- 
+layout: default 
 ---
 <div class="post-wrapper">
-{{ content }}
-<ul class="pager pagination">
-  {% if page.next.url %}
-  <li class="page-item float-left font-weight-bold">
+  {{ content }}
+  <ul class="pager pagination">
+    {% if page.next.url %}
+    <li class="page-item float-left font-weight-bold">
       <a href="{{ page.next.url }}" class="font-weight-bold">&laquo; {{ page.next.title }}</a>
-  </li>
-  {% endif %}
-  {% if page.previous.url %}
-  <li class="page-item float-right ml-auto">
+    </li>
+    {% endif %} {% if page.previous.url %}
+    <li class="page-item float-right ml-auto">
       <a href="{{ page.previous.url }}" class="font-weight-bold">{{ page.previous.title }} &raquo;</a>
-  </li>
-  {% endif %}
+    </li>
+    {% endif %}
   </ul>
 </div>

@@ -5,6 +5,8 @@ sass:
 
 exclude: []
 
+permalink: pretty
+
 plugins: [jekyll-paginate-v2]
 
 ############################################################
