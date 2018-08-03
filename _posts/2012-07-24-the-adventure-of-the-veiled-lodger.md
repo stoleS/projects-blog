@@ -2,7 +2,6 @@
 layout: post
 title: "The Adventure of the Veiled Lodger"
 author: "Arthur Conan Doyle"
-categories: literature
 photo_url: http://placeimg.com/640/280/tech
 ---
 

@@ -3,7 +3,7 @@ sass:
         - _sass
         - node_modules
 
-exclude: []
+exclude: [node_modules]
 
 permalink: pretty
 

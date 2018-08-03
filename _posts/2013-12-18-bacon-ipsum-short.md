@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Bacon Ipsum (Short)"
-categories: loremipsum
 photo_url: http://placeimg.com/640/280/tech
 ---
 
