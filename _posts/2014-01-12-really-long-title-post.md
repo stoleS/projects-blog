@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Some really obnoxiously long post title"
-photo_url: http://placeimg.com/640/280/tech
+author: "Predrag Stošić"
+photo_url: http://placeimg.com/940/480/tech
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales ac orci vitae vulputate. Maecenas in tortor non metus euismod sollicitudin. Etiam tincidunt pretium diam gravida elementum. Phasellus eu lacus ut massa sagittis suscipit eget eu dui. Donec metus enim, sodales convallis mauris varius, vestibulum sollicitudin lorem. Mauris venenatis nulla ut eros blandit gravida. Nulla gravida, tortor nec dapibus suscipit, eros enim consequat odio, at tempus massa sapien vel felis. Mauris iaculis massa mi.

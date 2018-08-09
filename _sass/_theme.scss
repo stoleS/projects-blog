@@ -63,6 +63,9 @@ $beige: #efd9ce; // almond
   .list-group h1 {
     text-align: center;
   }
+  .single-post-title {
+    font-size: 2rem !important;
+  }
 }
 
 /* NAV RESPONSIVE STYLES END*/
@@ -174,6 +177,30 @@ a {
   h1 {
     color: $dark-blue;
   }
+}
+
+.post-author {
+  margin-bottom: 2rem;
+  font-size: 1rem !important;
+}
+
+.single-post-header {
+  border: none !important;
+  margin-bottom: 2.5rem;
+
+  .single-post-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.single-post-header:hover {
+  box-shadow: none !important;
+}
+
+.card-img-overlay {
+  background-color: rgba($glacier-blue, 0.9);
 }
 
 /* POST PAGE STYLES END */
