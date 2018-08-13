@@ -66,12 +66,15 @@ $beige: #efd9ce; // almond
   .single-post-title {
     font-size: 2rem !important;
   }
+  .card-image {
+    min-height: 250px !important;
+  }
 }
 
 /* NAV RESPONSIVE STYLES END*/
 
 .card-image {
-  min-height: 350px;
+  min-height: 370px;
   background-position: center;
   background-size: cover;
 }
@@ -227,9 +230,6 @@ html {
   width: 100%;
   background-color: $dark-blue;
   padding: 3rem 0;
-}
-
-.footer .container {
 }
 
 .footer a {
