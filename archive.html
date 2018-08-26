@@ -1,15 +1,29 @@
 --- 
 layout: default 
+title: "Archive"
+photo_url: "/assets/archive.jpeg"
 ---
-
-<div class="post-wrapper list-group">
-  {% for post in site.posts %} {% assign currentDate = post.date | date: "%B %Y" %} {% if currentDate != myDate %} {% unless forloop.first
-  %}
-  </ul>{% endunless %}
-  <h1>{{ currentDate }}</h1>
-  <ul id="archive-ul">
-    {% assign myDate = currentDate %} {% endif %}
-      <a href="{{ post.url }}" class="list-group-item list-group-item-action">
-        <span>{{ post.date | date: "%B %-d, %Y" }}</span> - {{ post.title }}</a>
-    {% if forloop.last %}</ul>{% endif %} {% endfor %}
+<div class="card article">
+  <div class="card-content">
+    <div class="content article-body">
+      {% for post in site.posts %} 
+        {% assign currentDate = post.date | date: "%B %Y" %} 
+        {% if currentDate != myDate %} 
+          {% unless forloop.first%}
+            </ul>
+          {% endunless %}
+          <h1>{{ currentDate }}</h1>
+          <ul id="archive-ul">
+          {% assign myDate = currentDate %}
+        {% endif %}
+          <li>
+          <a href="{{ post.url }}" class="list-group-item list-group-item-action">
+            <span>{{ post.date | date: "%B %-d, %Y" }}</span> - {{ post.title }}
+          </a>
+        {% if forloop.last %}
+          </ul>
+        {% endif %} 
+      {% endfor %}
+    </div>
+  </div>
 </div>

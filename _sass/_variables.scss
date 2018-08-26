@@ -1,6 +1,2 @@
-$font-family-sans-serif: 'Open Sans',
-sans-serif;
-$link-color: $dark-blue;
-$link-hover-color: $glacier-blue;
-$link-hover-decoration: none;
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-pageloader/dist/css/bulma-pageloader.sass";

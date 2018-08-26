@@ -1,34 +1,64 @@
----
-layout: default
-pagination:
-  enabled: true
----
+--- 
+layout: default 
+pagination: 
+  enabled: true 
+title: "In the web we love making things complicated and then going back to the basics..."
+photo_url: "/assets/hero.jpeg"
+--- 
 {% for post in paginator.posts %}
-  <div class="card mb-3 shadow-sm" style="margin-top: 4rem">
-    <a href="{{site.baseurl}}{{post.url}}">
-      <div class="card-image" style="background-image: url('{{ post.photo_url }}')"></div>
-    </a>
-    <div class="card-body">
-      <h5 class="card-title font-weight-bold"><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h5>
-      <p class="card-text">{{ post.content | strip_html | truncatewords: 30 }}<a href="{{site.baseurl}}{{post.url}}" class="read-more"> Read more</a></p>
-      <p class="card-text">
-        <small class="text-muted">{{ post.date | date: "%d/%m/%Y" }}</small>
-      </p>
+<div class="card article">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <img src="/assets/10print.png" class="author-image" alt="Placeholder image">
+      </div>
+      <div class="media-content has-text-centered">
+        <p class="title article-title"><a href="{{site.baseurl}}{{post.url}}" class="has-text-dark">{{ post.title }}</a></p>
+        <p class="subtitle is-6 article-subtitle">
+          <a href="{{site.baseurl}}/">{{ post.author }}</a>
+        </p>
+        <p class="subtitle is-6 article-subtitle">
+        {{ post.date | date: "%-d. %B %Y" }}
+        &middot;
+        {% assign words = post.content | number_of_words %}
+        {% if words < 270 %}
+           1 min read
+        {% else %}
+          {{ words | divided_by:135 }} min read
+        {% endif %}
+        </p>
+        <div class="divider has-background-grey-light"></div>
+      </div>
     </div>
+    <figure class="image">
+      <img src={{ post.photo_url }}>
+    </figure>
+    <div class="content article-body">
+      <p class="card-text">{{ post.content | truncatewords: 80 }}</p>
+    </div>
+    <a href="{{site.baseurl}}{{post.url}}" class="button is-info is-rounded read-more">Read more</a>
   </div>
-{% endfor %}
-
+</div>
+{% endfor %} 
 {% if paginator.total_pages > 1 %}
-  <ul class="pager pagination">
-      {% if paginator.previous_page %}
-      <li class="page-item float-left font-weight-bold">
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-previous shadow-sm font-weight-bold p-3">&laquo; newer posts</a>
-      </li>
-      {% endif %}
-      {% if paginator.next_page %}
-      <li class="page-item float-right ml-auto">
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-next shadow-sm font-weight-bold p-3">older posts &raquo;</a>
-      </li>
-      {% endif %}
-  </ul>
-  {% endif %}
+  <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
+    {% if paginator.previous_page and paginator.next_page != true %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="pagination-previous has-background-white">&laquo; Previous</a>
+      <a class="pagination-next" disabled>Next page &raquo;</a>
+    {% endif %} 
+    {% if paginator.page_trail %}
+    <ul class="pagination-list">
+      {% for trail in paginator.page_trail %}
+        <li>
+          <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}" class="pagination-link {% if page.url == trail.path %}is-current{% endif %}">{{ trail.num }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if paginator.next_page and paginator.previous_page != true %}
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="pagination-next has-background-white">Next page &raquo;</a>
+      <a class="pagination-previous" disabled>&laquo; Previous</a>
+    {% endif %}
+  </nav>
+{% endif %}
+

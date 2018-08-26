@@ -1,8 +1,15 @@
 {% include head.html %}
-<div class="wrapper">
-    {% include header.html %}
-    <div class="container">
-    {{ content }}
+{% include nav.html %}
+{% include hero.html %}
+<div class="container">
+  <!-- START ARTICLE FEED -->
+  <section class="articles">
+    <div class="column is-8 is-offset-2">
+      <!-- START ARTICLE -->
+      {{ content }}
+      <!-- END ARTICLE -->
     </div>
+  </section>
+  <!-- END ARTICLE FEED -->
 </div>
 {% include footer.html %}

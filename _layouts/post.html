@@ -1,24 +1,42 @@
 --- 
-layout: default 
----
-<div class="post-wrapper">
-  <div class="card bg-dark text-white single-post-header">
-  <img class="card-img" src="{{ page.photo_url }}" alt="Card image">
-  <div class="card-img-overlay d-flex align-items-center justify-content-center">
-    <h5 class="card-title single-post-title">{{ page.title }}</h5>
+layout: default
+--- 
+<div class="card article">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-center">
+        <img src={{ "/assets/10print.png" | relative_url }} class="author-image" alt="Placeholder image">
+      </div>
+      <div class="media-content has-text-centered">
+        <p class="subtitle is-6 article-subtitle">
+          <a href="#">{{ page.author }}</a>
+        </p>
+        <p class="subtitle is-6 article-subtitle">
+        {{ page.date | date: "%-d. %B %Y" }}
+        &middot;
+        {% assign words = page.content | number_of_words %}
+        {% if words < 270 %}
+           1 min read
+        {% else %}
+          {{ words | divided_by:135 }} min read
+        {% endif %}
+        </p>
+        <div class="divider has-background-grey-light"></div>
+        <figure class="image">
+          <img src={{ page.photo_url }}>
+        </figure>
+      </div>
+    </div>
+    <div class="content article-body">
+      {{ content }}
+    </div>
   </div>
-</div> 
-  <p class="text-muted font-italic post-author text-right">Posted by <a href="https://github.com/stoleS" class="read-more">{{ page.author }}</a> on {{ page.date | date: "%b %d, %Y" }}</p>
-  {{ content }}
-  <ul class="pager pagination">
-    {% if page.next.url %}
-    <li class="page-item float-left font-weight-bold">
-      <a href="{{ page.next.url }}" class="font-weight-bold">&laquo; {{ page.next.title }}</a>
-    </li>
-    {% endif %} {% if page.previous.url %}
-    <li class="page-item float-right ml-auto">
-      <a href="{{ page.previous.url }}" class="font-weight-bold">{{ page.previous.title }} &raquo;</a>
-    </li>
-    {% endif %}
-  </ul>
 </div>
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+  {% if page.next.url %}
+    <a href="{{ page.next.url }}" class="pagination-previous">&laquo; {{ page.next.title }}</a>
+  {% endif %} 
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url }}" class="pagination-next">{{ page.previous.title }} &raquo;</a>
+  {% endif %}
+</nav>
