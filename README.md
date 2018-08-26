@@ -2,7 +2,7 @@
 
 > This website contains some of my personal project, tutorials and snippets. It is hosted on github pages at stoles.github.io. (WIP)
 
-![](projects-blog.png)
+![](/assets/projects-blog/projects-blog.png)
 
 ## Instructions
 
