@@ -1,9 +1,9 @@
 <!-- START NAV -->
-<nav class="navbar is-fixed-top">
+<nav class="navbar">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item logo" href="{{site.baseurl}}/">
-        <img src={{ "assets/logo.png" | absolute_url }} alt="Stole">
+        <img src="/assets/logo.png" alt="Stole">
       </a>
       <span class="navbar-burger burger" data-target="navbarMenu">
         <span></span>
@@ -13,20 +13,20 @@
     </div>
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item is-active" href="{{site.baseurl}}/">
+        <a class="navbar-item {% if page.active == 'index' %}is-active{% endif %}" href="{{site.baseurl}}/">
           Home
         </a>
-        <a class="navbar-item" href="{{site.baseurl}}/archive">
+        <a class="navbar-item {% if page.active == 'archive' %}is-active{% endif %}" href="{{site.baseurl}}/archive">
           Archive
         </a>
         {% comment %} <a class="navbar-item" href="{{site.baseurl}}/about">
           About
         </a> {% endcomment %}
-        <a class="navbar-item" href="{{site.baseurl}}/contact">
+        <a class="navbar-item {% if page.active == 'contact' %}is-active{% endif %}" href="{{site.baseurl}}/contact">
           Contact
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+          <a class="navbar-link" id="social">
             Social
           </a>
           <div class="navbar-dropdown">

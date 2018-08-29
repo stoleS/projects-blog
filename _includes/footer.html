@@ -15,6 +15,7 @@
 </footer>
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 <script>
+  window.onscroll = () => {backToTop()};
   document.addEventListener('DOMContentLoaded', () => {
 
     // Get all "navbar-burger" elements
@@ -54,8 +55,13 @@
     }
   }
 
+  function hideLoader() {
+    document.getElementById("loader").style.display = "none";
+  }
+
   function removeLoader() {
     document.getElementById("loader").classList.remove("is-active");
+    setTimeout(hideLoader, 350);
   }
 
   window.addEventListener("load", () => {
@@ -70,6 +76,19 @@
     type();
   });
   
+  // Back to top function
+  function backToTop() {
+    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      document.getElementById("to-top").style.display = "block";
+    } else {
+      document.getElementById("to-top").style.display = "none";
+    }
+  }
+
+  function toTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 </script>
 </body>
 
